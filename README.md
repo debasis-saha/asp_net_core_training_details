@@ -1,1 +1,4 @@
-# asp_net_core_training_details
+# ASP.Net Core Training Details
+
+This Repository contains all Day wise Training Material for Asp.Net Core
+
