@@ -1,0 +1,28 @@
+﻿@model MVC_Sample_Application.Models.Product
+
+<div class="text-center">
+    <h2>If Condition Examples</h2>
+
+    <div>
+        @if (DateTime.IsLeapYear(DateTime.Now.Year))
+        {
+            @DateTime.Now.Year @:is a leap year.
+        }
+        else
+        {
+            @DateTime.Now.Year @:is not a leap year.
+        }
+    </div>
+
+    <div>
+        <pre>
+        <span>Model Name : @Model.ProductName</span>
+        <span>Model Category : @Model.Category</span>
+        <span>Price : @Model.Price</span>
+        <span>Discount Rate : @Model.DiscountRate</span>
+        <span>Final Price :  @(Model.Price * Model.DiscountRate/100)</span>
+            
+       </pre>
+    </div>
+</div>
+<h5>@Html.ActionLink("Back to Day 3 Home", "Index", "Day3")</h5>

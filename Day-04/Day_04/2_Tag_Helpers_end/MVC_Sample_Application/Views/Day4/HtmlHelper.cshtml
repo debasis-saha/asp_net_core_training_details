@@ -1,0 +1,56 @@
+﻿@model MVC_Sample_Application.Models.Student
+
+@{
+    ViewBag.Title = "Student Entry Form";
+}
+
+<div class="text-center">
+    <h2>@ViewBag.Title</h2>
+
+    <table class="table" style="border:none;">
+        <tr>
+            <td>@Html.LabelFor(m => m.StudentName)</td>
+            <td>@Html.TextBoxFor(m => m.StudentName, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Guardian Name")</td>
+            <td>@Html.TextBoxFor(m => m.GuardianName, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Currently Enrolled")</td>
+            <td>@Html.CheckBoxFor(m => m.IsEnrolled, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Gender)</td>
+            <td>
+                @Html.RadioButtonFor(m => m.Gender, "Male") Male
+                @Html.RadioButtonFor(m => m.Gender, "Female") Female
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.City)</td>
+            <td>
+                @Html.DropDownListFor(m => m.City,
+                    new SelectList(Enum.GetValues(typeof(CityEnum))),
+                    "Select City")
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" value="Submit" class="btn-primary" />
+                <input type="button" value="Clear" class="btn-danger" />
+            </td>
+        </tr>
+    </table>
+
+</div>
+<h5>@Html.ActionLink("Back to Day 4 Home", "Index", "Day4")</h5>

@@ -1,0 +1,20 @@
+﻿@{
+    var date = DateTime.Now.ToShortDateString();
+    var message = "Hello World";
+
+    var date1 = DateTime.Now.ToShortDateString();
+    string message1 = "Hello Asp.Net Core!";
+    @:Today's date is: @date1
+    <br />
+    @message1
+}
+
+<div class="text-center">
+    <h2>Basic Razor Page Examples</h2>
+
+    <h2>@DateTime.Now.ToShortDateString()</h2>
+
+
+    <h2>Today's date is: @date </h2>
+    <h3>@message</h3>
+</div>
