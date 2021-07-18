@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MVC_Sample_Application.Models.Product>
+
+@{
+    ViewBag.Title = "Product Catalog";
+}
+
+<div class="text-center">
+    <h2>Product Catalog</h2>
+    <table class="table">
+        <tr>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Final Price</th>
+        </tr>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductName</td>
+                <td>@product.Category</td>
+                <td>@product.Price</td>
+                <td>@product.DiscountRate</td>
+                <td>@(product.Price - (product.Price * product.DiscountRate/100))</td>
+            </tr>
+        }
+    </table>
+
+</div>
+<h5>@Html.ActionLink("Back to Day 3 Home", "Index", "Day3")</h5>
